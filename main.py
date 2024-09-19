@@ -6,8 +6,7 @@ import random
 import sqlite3
 image1='library.png'
 image2='image2.png'
-image3='finance.png'
-#pip install Pillow
+image3='library.png'
 class menu:
 
     def __init__(self):
@@ -20,6 +19,11 @@ class menu:
         TITLE VARTEXT NOT NULL,
         AUTHOR VARTEXT NOT NULL,
         GENRE VARTEXT NOT NULL,
+        AUTHOR VARTEXT NOT NULL,
+        PUBLISHER VARCHAR NOT NULL,
+        PAGES VARCHAR NOT NULL,
+        YEAR VARCHAR NOT NULL,
+        PRICE VARCHAR NOT NULL,
         COPIES VARINT NOT NULL,
         LOCATION VARCHAR NOT NULL);''')
         conn.commit()
@@ -461,7 +465,7 @@ def Database():
     cursor.execute("CREATE TABLE IF NOT EXISTS `login` (mem_id INTEGER NOT NULL PRIMARY KEY  AUTOINCREMENT, username TEXT, password TEXT)")
     cursor.execute("SELECT * FROM `login` WHERE `username` = 'admin' AND `password` = 'admin'")
     if cursor.fetchone() is None:
-        cursor.execute("INSERT INTO `login` (username, password) VALUES('Prakarsha', 'root')")
+        cursor.execute("INSERT INTO `login` (username, password) VALUES('Siva', 'Siva123')") #updated the admin Details. 
         conn.commit()
 
 def Login(event=None):
